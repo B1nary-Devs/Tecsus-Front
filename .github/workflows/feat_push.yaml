@@ -1,0 +1,39 @@
+name: CI Feature Branch
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - dev
+
+jobs:
+  build-and-test:
+    # Máquina virtual Ubuntu que executa o job
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout do código da branch atual
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Configuração do Node.js com uma versão específica
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14.x' # Versão do Node.js
+
+      # Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # Executar o build da aplicação
+      - name: Execute Build
+        run: npm run build
+
+      # Executar os testes de unidade
+      - name: Run unit tests
+        run: npm run test
+
+      # Notificar em caso de falha nos testes
+      - name: Notify failure
+        if: failure()
+        run: echo "Unit tests failed. Please check the logs."

@@ -9,10 +9,7 @@ function App() {
     document.title = "B1nary Devs";
   }, []);
   return (
-    <BrowserRouter>
-      <ToastContainer autoClose={3000}/>
-      <RoutesApp/>
-    </BrowserRouter>
+      <RoutesApp/> 
   );
 }
 

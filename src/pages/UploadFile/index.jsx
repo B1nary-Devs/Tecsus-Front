@@ -34,7 +34,7 @@ export default function UploadFile() {
         const formData = new FormData();
         formData.append('file', new Blob([Papa.unparse(csvData)], { type: 'text/csv' }), fileInfo.name);
 
-        await axios.post('http://127.0.0.1:8000/upload', formData)
+        await axios.post('https://tecsus-etl-2.onrender.com/upload', formData)
             .then(function (response) {
                 setLoader(false);
                 toast.success('Atualizado com sucesso!');
