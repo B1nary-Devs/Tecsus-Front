@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import axios from 'axios';
 import Papa from 'papaparse';
-import UploadFile from './index';
+import UploadFile from '../../../src/pages/UploadFile/index';
 import { toast } from 'react-toastify';
 import { BrowserRouter } from 'react-router-dom';
 
