@@ -38,30 +38,6 @@ const Sidebar = () => {
           >
             Atualizar Dados
           </li>
-          <li
-            onClick={() => handleItemClick('/relatorio')}
-            onMouseEnter={() => handleMouseEnter('relatorio')}
-            onMouseLeave={handleMouseLeave}
-            className={hoveredItem === 'relatorio' ? 'menu-item active' : 'menu-item'}
-          >
-            Relatório
-          </li>
-          <li
-            onClick={() => handleItemClick('/configuracoes')}
-            onMouseEnter={() => handleMouseEnter('configuracoes')}
-            onMouseLeave={handleMouseLeave}
-            className={hoveredItem === 'configuracoes' ? 'menu-item active' : 'menu-item'}
-          >
-            Configurações
-          </li>
-          <li
-            onClick={() => handleItemClick('/')}
-            onMouseEnter={() => handleMouseEnter('sair')}
-            onMouseLeave={handleMouseLeave}
-            className={hoveredItem === 'sair' ? 'menu-item active' : 'menu-item'}
-          >
-            Sair
-          </li>
         </ul>
       </div>
     </div>
